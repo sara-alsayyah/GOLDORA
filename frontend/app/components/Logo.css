@@ -1,0 +1,45 @@
+.goldora-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.logo-icon {
+  width: 48px;
+  height: 48px;
+  border: 1.5px solid #d4af37;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #d4af37;
+
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.08);
+
+  transition: 0.3s ease;
+}
+
+.logo-icon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.15);
+}
+
+.logo-text {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 6px;
+  color: #1f1f1f;
+  margin: 0;
+  transition: 0.3s ease;
+}
+
+.goldora-logo:hover .logo-text {
+  color: #d4af37;
+}

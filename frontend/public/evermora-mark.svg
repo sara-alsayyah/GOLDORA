@@ -1,0 +1,25 @@
+<svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="16" y="16" width="188" height="188" rx="44" fill="url(#bg)"/>
+  <rect x="28" y="28" width="164" height="164" rx="34" stroke="url(#frame)" stroke-width="2"/>
+  <path d="M70 70H150" stroke="url(#gold)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M70 110H142" stroke="url(#gold)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M70 150H150" stroke="url(#gold)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M74 70L116 150" stroke="#FFF8E5" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="160" cy="70" r="10" fill="#F8E29B"/>
+  <defs>
+    <linearGradient id="bg" x1="36" y1="22" x2="190" y2="206" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFDF6"/>
+      <stop offset="0.5" stop-color="#E9D7AB"/>
+      <stop offset="1" stop-color="#C19133"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="70" y1="69" x2="150" y2="153" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF4C7"/>
+      <stop offset="0.55" stop-color="#D4AF37"/>
+      <stop offset="1" stop-color="#8F6C1D"/>
+    </linearGradient>
+    <linearGradient id="frame" x1="28" y1="28" x2="192" y2="192" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF7D9"/>
+      <stop offset="1" stop-color="#A87A25"/>
+    </linearGradient>
+  </defs>
+</svg>
