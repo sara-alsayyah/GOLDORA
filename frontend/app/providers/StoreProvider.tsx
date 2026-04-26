@@ -48,7 +48,7 @@ type StoreContextValue = {
   logout: () => void;
   refreshCart: () => Promise<void>;
   refreshWishlist: () => Promise<void>;
-  addProductToCart: (product: Product, imageElement?: HTMLImageElement | null) => Promise<void>;
+  addProductToCart: (product: Product, imageElement?: HTMLImageElement | null, quantity?: number) => Promise<void>;
   changeQuantity: (itemId: number, quantity: number) => Promise<void>;
   deleteItem: (itemId: number) => Promise<void>;
   saveItemForLater: (itemId: number) => void;
@@ -228,7 +228,11 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     }
   }, [token]);
 
-  async function addProductToCart(product: Product) {
+  async function addProductToCart(
+    product: Product,
+    _imageElement?: HTMLImageElement | null,
+    quantity = 1,
+  ) {
     if (!token) {
       setStatusMessage("Login required");
       window.location.href = "/login";
@@ -236,8 +240,12 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     }
 
     try {
-      await addCartItem(token, product.id, 1);
-      setStatusMessage(`${product.name} added to cart`);
+      await addCartItem(token, product.id, quantity);
+      setStatusMessage(
+        quantity > 1
+          ? `${quantity} ${product.name} pieces added to cart`
+          : `${product.name} added to cart`,
+      );
       setCartPulse((current) => current + 1);
       void refreshCart(token);
     } catch (error: unknown) {

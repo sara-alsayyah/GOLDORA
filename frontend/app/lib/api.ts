@@ -156,6 +156,24 @@ export async function register(payload: {
   });
 }
 
+export async function requestPasswordReset(email: string) {
+  return apiFetch<{ message: string }>("/users/password-reset/", {
+    method: "POST",
+    body: JSON.stringify({ email }),
+  });
+}
+
+export async function confirmPasswordReset(payload: {
+  uid: string;
+  token: string;
+  new_password: string;
+}) {
+  return apiFetch<{ message: string }>("/users/password-reset/confirm/", {
+    method: "POST",
+    body: JSON.stringify(payload),
+  });
+}
+
 export async function getCart(token: string) {
   return apiFetch<CartItem[]>("/cart/", { token });
 }

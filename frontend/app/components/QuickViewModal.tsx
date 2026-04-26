@@ -53,6 +53,7 @@ export function QuickViewModal() {
                 </div>
                 <div className="flex flex-wrap gap-3">
                   <button
+                    type="button"
                     onClick={() => void addProductToCart(quickViewProduct)}
                     className="gold-button rounded-full px-6 py-3 text-sm uppercase tracking-[0.18em]"
                   >

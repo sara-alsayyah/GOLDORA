@@ -7,7 +7,6 @@ export const commerceCategories = [
   { name: "Electronics", slug: "electronics", accent: "Daily tech picks" },
   { name: "Home Essentials", slug: "home", accent: "Decor and fragrance" },
   { name: "Perfumes", slug: "perfumes", accent: "Signature scents" },
-  { name: "Watches", slug: "watches", accent: "Polished timepieces" },
   { name: "Sports & Fitness", slug: "sports", accent: "Active essentials" },
 ];
 

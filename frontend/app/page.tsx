@@ -10,14 +10,22 @@ import { ProductCard } from "@/app/components/ProductCard";
 import { commerceCategories } from "@/app/lib/categories";
 import { BRAND_NAME } from "@/app/lib/brand";
 import { useStore } from "@/app/providers/StoreProvider";
+import {
+  GiftIcon,
+  HangerIcon,
+  HeadsetIcon,
+  HomeIcon,
+  SparkleIcon,
+  TrendUpIcon,
+} from "@/app/components/icons";
 
 const personalShoppingTiles = [
-  { label: "Fashion", query: "dress" },
-  { label: "Gifts", query: "gift" },
-  { label: "Beauty", query: "serum" },
-  { label: "Tech", query: "audio" },
-  { label: "Essentials", query: "daily" },
-  { label: "Trending", query: "new" },
+  { label: "Fashion", query: "dress", icon: HangerIcon },
+  { label: "Gifts", query: "gift", icon: GiftIcon },
+  { label: "Beauty", query: "serum", icon: SparkleIcon },
+  { label: "Tech", query: "audio", icon: HeadsetIcon },
+  { label: "Essentials", query: "daily", icon: HomeIcon },
+  { label: "Trending", query: "new", icon: TrendUpIcon },
 ];
 
 export default function HomePage() {
@@ -44,6 +52,7 @@ export default function HomePage() {
   const scrollEdit = products.slice(0, 10);
   const bestSellers = products.slice(0, 6);
   const shopTheLook = products.slice(0, 3);
+  const flashDealProduct = products[1] ?? products[0];
   const recommended = useMemo(() => {
     const recentIds = new Set(recentlyViewed.map((item) => item.id));
     const wishlistIds = new Set(wishlistItems.map((item) => item.product.id));
@@ -67,10 +76,10 @@ export default function HomePage() {
             <div className="min-w-0 max-w-2xl">
               <p className="text-xs uppercase tracking-[0.38em] text-[var(--gold-deep)]">Luxury ease of use</p>
               <h1 className="section-heading text-balance mt-6 text-5xl leading-[1.02] sm:text-7xl">
-                <span className="text-[var(--gold-deep)]">{BRAND_NAME}</span> brings every category into one refined shopping world.
+                <span className="text-[var(--gold-deep)]">{BRAND_NAME}</span>  A luxury shopping world.
               </h1>
               <p className="mt-5 max-w-xl text-sm leading-7 text-[var(--muted)] sm:text-base">
-                Fashion, beauty, accessories, and everyday essentials presented with a polished boutique mood.
+                Fashion, beauty, accessories, and everyday essentials.
               </p>
 
               <div className="mt-10 flex flex-wrap gap-4">
@@ -93,7 +102,7 @@ export default function HomePage() {
                     <img
                       src={resolveMediaUrl(heroProduct.image) ?? ""}
                       alt={heroProduct.name}
-                      className="h-[320px] w-full object-cover sm:h-[380px] md:w-[320px] lg:w-[380px]"
+                      className="h-[320px] w-full object-contain bg-[linear-gradient(180deg,#fffdf8,#f6eddc)] sm:h-[380px] md:w-[320px] lg:w-[380px]"
                     />
                   ) : (
                     <div className="h-[320px] w-full bg-[radial-gradient(circle_at_top,#fff7e6,#d8b14d_45%,#9d721e)] sm:h-[380px] md:w-[320px] lg:w-[380px]" />
@@ -141,6 +150,35 @@ export default function HomePage() {
                   </p>
                 </div>
               </div>
+              {flashDealProduct ? (
+                <div className="mt-5 grid gap-4 sm:grid-cols-[120px,1fr]">
+                  <div className="overflow-hidden rounded-[22px] bg-white/72 p-3">
+                    {flashDealProduct.image ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={resolveMediaUrl(flashDealProduct.image) ?? ""}
+                        alt={flashDealProduct.name}
+                        className="h-28 w-full object-contain"
+                      />
+                    ) : (
+                      <div className="h-28 rounded-[18px] bg-[radial-gradient(circle_at_top,#fff7e6,#d8b14d_45%,#9d721e)]" />
+                    )}
+                  </div>
+                  <div className="flex items-center justify-between gap-4 rounded-[22px] border border-[rgba(143,108,29,0.12)] bg-white/66 p-4">
+                    <div>
+                      <p className="text-sm font-medium">{flashDealProduct.name}</p>
+                      <p className="mt-1 text-sm text-[var(--muted)]">{flashDealProduct.category.name}</p>
+                      <p className="mt-2 text-lg text-[var(--gold-deep)]">{money(flashDealProduct.price)}</p>
+                    </div>
+                    <Link
+                      href={`/products/${flashDealProduct.slug}`}
+                      className="rounded-full border border-[rgba(143,108,29,0.16)] px-4 py-2 text-xs uppercase tracking-[0.16em]"
+                    >
+                      View
+                    </Link>
+                  </div>
+                </div>
+              ) : null}
             </div>
           </div>
         </div>
@@ -155,16 +193,21 @@ export default function HomePage() {
             </div>
           </div>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-6">
-            {personalShoppingTiles.map((tile, index) => (
+            {personalShoppingTiles.map((tile, index) => {
+              const TileIcon = tile.icon;
+              return (
               <Link
                 key={tile.label}
                 href={`/products?search=${encodeURIComponent(tile.query)}`}
                 className={`rounded-[24px] border border-[rgba(143,108,29,0.14)] p-5 ${index % 2 === 0 ? "bg-[linear-gradient(135deg,#fffdf4,#f2dfb6)]" : "bg-white/76"}`}
               >
+                <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(143,108,29,0.14)] bg-white/76 text-[var(--gold-deep)]">
+                  <TileIcon className="h-5 w-5" />
+                </div>
                 <p className="font-[var(--font-display)] text-2xl">{tile.label}</p>
                 <p className="mt-2 text-sm text-[var(--muted)]">Curated shortcuts into the right category.</p>
               </Link>
-            ))}
+            )})}
           </div>
         </div>
       </section>

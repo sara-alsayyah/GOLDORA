@@ -104,3 +104,59 @@ export function CloseIcon(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+export function HangerIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" {...props}>
+      <path d="M12 6a2 2 0 1 0-2-2" />
+      <path d="M10 4v3l-5.8 4.1A1 1 0 0 0 4.8 13h14.4a1 1 0 0 0 .6-1.9L14 7V6" />
+    </svg>
+  );
+}
+
+export function GiftIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" {...props}>
+      <path d="M4 10h16v10H4z" />
+      <path d="M12 10v10M4 14h16M12 10H7.5A2.5 2.5 0 1 1 10 7.5V10Zm0 0h4.5A2.5 2.5 0 1 0 14 7.5V10Z" />
+    </svg>
+  );
+}
+
+export function SparkleIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" {...props}>
+      <path d="m12 3 1.7 5.3L19 10l-5.3 1.7L12 17l-1.7-5.3L5 10l5.3-1.7L12 3Z" />
+      <path d="M19 3v3M20.5 4.5h-3M4 17v4M6 19H2" />
+    </svg>
+  );
+}
+
+export function HeadsetIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" {...props}>
+      <path d="M4 13a8 8 0 1 1 16 0" />
+      <rect x="3" y="12" width="4" height="7" rx="2" />
+      <rect x="17" y="12" width="4" height="7" rx="2" />
+      <path d="M19 19a3 3 0 0 1-3 3h-2" />
+    </svg>
+  );
+}
+
+export function HomeIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" {...props}>
+      <path d="M3 11.5 12 4l9 7.5" />
+      <path d="M5 10.5V20h14v-9.5" />
+    </svg>
+  );
+}
+
+export function TrendUpIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" {...props}>
+      <path d="m4 16 5-5 4 4 7-7" />
+      <path d="M14 8h6v6" />
+    </svg>
+  );
+}

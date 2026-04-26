@@ -49,7 +49,7 @@ Example:
 ```bash
 python -m venv venv
 venv\Scripts\activate
-pip install django djangorestframework djangorestframework-simplejwt django-filter django-cors-headers
+pip install -r requirements.txt
 python manage.py migrate
 python manage.py seed_store
 python manage.py runserver 8001

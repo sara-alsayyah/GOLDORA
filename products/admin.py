@@ -10,10 +10,15 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('name', 'category', 'price', 'stock', 'created_at')
+    list_display = ('name', 'category', 'price', 'stock', 'low_stock_flag', 'created_at')
     list_filter = ('category',)
     search_fields = ('name', 'description', 'slug')
     prepopulated_fields = {'slug': ('name',)}
+
+    def low_stock_flag(self, obj):
+        return "Low stock" if obj.stock <= 5 else "Healthy"
+
+    low_stock_flag.short_description = "Inventory"
 
 
 @admin.register(Wishlist)

@@ -168,9 +168,9 @@ export default function LoginPage() {
               Remember me
             </label>
 
-            <span className="text-[var(--gold-deep)] cursor-pointer">
+            <Link href="/forgot-password" className="text-[var(--gold-deep)]">
               Forgot password?
-            </span>
+            </Link>
           </div>
         </div>
 
