@@ -208,7 +208,7 @@ export default function ProductDetailPage() {
 
             <div className="mt-8 grid gap-6 lg:grid-cols-2">
               <div>
-                <p className="text-xs uppercase tracking-[0.18em] text-[var(--muted)]">Shade or finish</p>
+                <p className="text-xs uppercase tracking-[0.18em] text-[var(--muted)]">Color</p>
                 <div className="mt-3 flex flex-wrap gap-3">
                   {colorOptions.map((option) => {
                     const active = activeColor === option.name;
@@ -232,7 +232,7 @@ export default function ProductDetailPage() {
               </div>
 
               <div>
-                <p className="text-xs uppercase tracking-[0.18em] text-[var(--muted)]">Size or format</p>
+                <p className="text-xs uppercase tracking-[0.18em] text-[var(--muted)]">Size</p>
                 <div className="mt-3 flex flex-wrap gap-3">
                   {sizeOptions.map((size) => {
                     const active = activeSize === size;

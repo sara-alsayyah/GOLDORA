@@ -102,7 +102,7 @@ export default function HomePage() {
                     <img
                       src={resolveMediaUrl(heroProduct.image) ?? ""}
                       alt={heroProduct.name}
-                      className="h-[320px] w-full object-contain bg-[linear-gradient(180deg,#fffdf8,#f6eddc)] sm:h-[380px] md:w-[320px] lg:w-[380px]"
+                      className="h-[320px] w-full object-cover bg-[linear-gradient(180deg,#fffdf8,#f6eddc)] sm:h-[380px] md:w-[320px] lg:w-[380px]"
                     />
                   ) : (
                     <div className="h-[320px] w-full bg-[radial-gradient(circle_at_top,#fff7e6,#d8b14d_45%,#9d721e)] sm:h-[380px] md:w-[320px] lg:w-[380px]" />

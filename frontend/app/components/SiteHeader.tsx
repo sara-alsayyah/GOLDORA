@@ -32,6 +32,11 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+useEffect(() => {
+  setIsMounted(true);
+}, []);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -44,6 +49,7 @@ export function SiteHeader() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
 
   function closeMenus() {
     setIsMobileMenuOpen(false);
@@ -146,30 +152,42 @@ export function SiteHeader() {
                 ) : null}
               </button>
 
-              {token ? (
-                <>
-                  <Link href="/account" onClick={closeMenus} className="rounded-full border border-[rgba(143,108,29,0.16)] bg-white/80 p-3">
-                    <UserIcon className="h-4 w-4" />
-                  </Link>
-                  <motion.button
-                    type="button"
-                    whileHover={{ y: -2 }}
-                    onClick={logout}
-                    className="hidden rounded-full border border-[rgba(143,108,29,0.16)] bg-white/80 px-5 py-2 text-sm md:block"
-                  >
-                    Logout
-                  </motion.button>
-                </>
-              ) : (
-                <div className="hidden items-center gap-2 md:flex">
-                  <Link href="/login" onClick={closeMenus} className="px-4 py-2 text-sm">
-                    Login
-                  </Link>
-                  <Link href="/register" onClick={closeMenus} className="gold-button rounded-full px-5 py-2 text-sm">
-                    Join
-                  </Link>
-                </div>
-              )}
+              {!isMounted ? (
+
+  <div className="w-10 h-10" />
+) : token ? (
+  <>
+    <Link
+      href="/account"
+      onClick={closeMenus}
+      className="rounded-full border border-[rgba(143,108,29,0.16)] bg-white/80 p-3"
+    >
+      <UserIcon className="h-4 w-4" />
+    </Link>
+
+    <motion.button
+      type="button"
+      whileHover={{ y: -2 }}
+      onClick={logout}
+      className="hidden rounded-full border border-[rgba(143,108,29,0.16)] bg-white/80 px-5 py-2 text-sm md:block"
+    >
+      Logout
+    </motion.button>
+  </>
+) : (
+  <div className="hidden items-center gap-2 md:flex">
+    <Link href="/login" onClick={closeMenus} className="px-4 py-2 text-sm">
+      Login
+    </Link>
+    <Link
+      href="/register"
+      onClick={closeMenus}
+      className="gold-button rounded-full px-5 py-2 text-sm"
+    >
+      Join
+    </Link>
+  </div>
+)}
             </div>
           </div>
 
@@ -258,7 +276,7 @@ export function SiteHeader() {
                   {themeMode === "light" ? <MoonIcon className="h-4 w-4" /> : <SunIcon className="h-4 w-4" />}
                 </button>
 
-                {token ? (
+                {isMounted && (token ? (
                   <button
                     type="button"
                     onClick={logout}
@@ -275,6 +293,7 @@ export function SiteHeader() {
                       Join
                     </Link>
                   </div>
+                  )
                 )}
               </div>
             </div>

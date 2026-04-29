@@ -16,6 +16,11 @@ export default function AccountPage() {
   const [orders, setOrders] = useState<Order[]>([]);
   const [addresses, setAddresses] = useState<Address[]>([]);
   const [message, setMessage] = useState<string | null>(null);
+  const [isMounted, setIsMounted] = useState(false);
+
+useEffect(() => {
+  setIsMounted(true);
+}, []);
   const [activeTab, setActiveTab] = useState<AccountTab>("overview");
 
   useEffect(() => {
@@ -59,7 +64,9 @@ export default function AccountPage() {
           </div>
           <div className="rounded-[24px] border border-[rgba(143,108,29,0.14)] bg-white/66 p-4">
             <p className="text-xs uppercase tracking-[0.16em] text-[var(--muted)]">Status</p>
-            <p className="mt-2 font-[var(--font-display)] text-3xl">{token ? "Active" : "Guest"}</p>
+            <p className="mt-2 font-[var(--font-display)] text-3xl">
+  {isMounted && (token ? "Active" : "Guest")}
+</p>
           </div>
         </div>
       </section>

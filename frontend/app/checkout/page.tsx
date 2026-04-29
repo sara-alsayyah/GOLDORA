@@ -16,6 +16,7 @@ export default function CheckoutPage() {
   const [paymentMethod, setPaymentMethod] = useState("cod");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
+  const [discount, setDiscount] = useState(0);
   const [cardDetails, setCardDetails] = useState({
     number: "",
     name: "",
@@ -121,7 +122,7 @@ export default function CheckoutPage() {
   );
   const estimatedShipping = cartItems.length ? 7.5 : 0;
   const estimatedTax = cartItems.length ? numericSubtotal * 0.04 : 0;
-  const orderTotal = numericSubtotal + estimatedShipping + estimatedTax;
+ const orderTotal = numericSubtotal + estimatedShipping + estimatedTax - discount;
   const orderSteps = ["Bag", "Address", "Payment", "Review"];
 
   return (
@@ -394,6 +395,7 @@ export default function CheckoutPage() {
               </div>
             ))}
           </div>
+          
 
           <input
             value={coupon}
@@ -401,6 +403,21 @@ export default function CheckoutPage() {
             placeholder="Gift card or coupon code"
             className="mt-6 w-full rounded-[18px] border border-[rgba(143,108,29,0.16)] bg-white/72 px-4 py-3 outline-none"
           />
+          <button
+  type="button"
+  onClick={() => {
+  if (!coupon.trim()) {
+    setMessage("Enter a coupon code");
+    return;
+  }
+
+  setMessage("Coupon will be applied at checkout");
+}}
+
+  className="gold-button mt-5 rounded-full px-5 py-3 text-sm uppercase tracking-[0.18em]"
+>
+  Apply coupon
+</button>
 
           <div className="mt-6 rounded-[24px] border border-[rgba(143,108,29,0.14)] bg-white/64 p-4">
             <div className="flex items-center justify-between text-sm text-[var(--muted)]">

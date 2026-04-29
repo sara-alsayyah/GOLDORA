@@ -240,7 +240,7 @@ export async function checkout(
   return apiFetch<{ message: string }>("/orders/checkout/", {
     method: "POST",
     token,
-    body: JSON.stringify({ address_id: addressId, coupon, payment_method: paymentMethod }),
+    body: JSON.stringify({ address_id: addressId, coupon:coupon, payment_method: paymentMethod }),
   });
 }
 

@@ -12,7 +12,7 @@ from cart.models import Cart
 from .models import Order, OrderItem, Coupon
 from .serializers import OrderSerializer
 from users.models import Address
-
+from decimal import Decimal
 
 class CheckoutAPIView(APIView):
     permission_classes = [IsAuthenticated]
@@ -45,21 +45,34 @@ class CheckoutAPIView(APIView):
                 total_price += item.product.price * item.quantity
 
       
-            coupon_code = request.data.get('coupon')
-            if coupon_code:
-                try:
-                    coupon = Coupon.objects.get(code=coupon_code, active=True)
-                    discount = (coupon.discount_percent / 100) * total_price
-                    total_price -= discount
-                except Coupon.DoesNotExist:
-                    return Response({"error": "Invalid coupon"}, status=400)
+            coupon_code = request.data.get("coupon", None)
+            print("COUPON RECEIVED:", request.data.get("coupon"))
 
+            discount = Decimal('0')
+            coupon_obj = None
+            if coupon_code:
+                coupon_code = str(coupon_code).strip()
+                if coupon_code:  
+                    coupon_obj = Coupon.objects.filter(
+                        code__iexact=coupon_code,
+                        active=True
+                        ).first()
+
+                if not coupon_obj:
+                    return Response({"error": "Invalid coupon code"}, status=400)
+                subtotal = total_price
+                discount_percent = Decimal(coupon_obj.discount_percent) / Decimal(100)
+                discount = subtotal * discount_percent
+                total_price = subtotal - discount
+                if total_price < 0: total_price = 0
+
+                applied_coupon = coupon_obj.code
     
-            address_id = request.data.get('address_id')
-            address = get_object_or_404(Address, id=address_id, user=user)
+        address_id = request.data.get('address_id')
+        address = get_object_or_404(Address, id=address_id, user=user)
 
            
-            order = Order.objects.create(
+        order = Order.objects.create(
                 user=user,
                 total_price=total_price,
                 address=address,
@@ -67,7 +80,7 @@ class CheckoutAPIView(APIView):
             )
 
 
-            for item in cart_items:
+        for item in cart_items:
                 OrderItem.objects.create(
                     order=order,
                     product=item.product,
@@ -78,18 +91,24 @@ class CheckoutAPIView(APIView):
                 item.product.stock -= item.quantity
                 item.product.save()
 
-            cart_items.delete()
+        cart_items.delete()
 
 
         send_mail(
             subject='Order Confirmation',
             message=f'Hi {user.email}, your order has been placed successfully!',
-            from_email='noreply@glowygirls.com',
+            from_email='noreply@goldora.com',
             recipient_list=[user.email],
             fail_silently=True,
         )
 
-        return Response({"message": "Order placed successfully"})
+        return Response({
+    "message": "Order placed successfully",
+    "subtotal": subtotal,
+    "discount": discount,
+    "total": total_price,
+    "coupon": applied_coupon
+})
     
 
 
