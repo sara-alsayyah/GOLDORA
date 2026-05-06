@@ -1,0 +1,524 @@
+[
+{
+  "model": "products.category",
+  "pk": 2,
+  "fields": {
+    "name": "Electronics",
+    "slug": "electronic"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 3,
+  "fields": {
+    "name": "Women",
+    "slug": "women"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 4,
+  "fields": {
+    "name": "Beauty & Skincare",
+    "slug": "beauty"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 5,
+  "fields": {
+    "name": "Bags & Accessories",
+    "slug": "bags"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 6,
+  "fields": {
+    "name": "Shoes",
+    "slug": "shoes"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 7,
+  "fields": {
+    "name": "Home Essentials",
+    "slug": "home"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 9,
+  "fields": {
+    "name": "Men",
+    "slug": "men"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 10,
+  "fields": {
+    "name": "Perfumes",
+    "slug": "perfumes"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 11,
+  "fields": {
+    "name": "Sports & Fitness",
+    "slug": "sports-fitness"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 1,
+  "fields": {
+    "name": "Phone Case",
+    "description": "strawbbery phone case",
+    "price": "10.00",
+    "stock": 11,
+    "image": "products/Phonecase_UUDU02X.png",
+    "category": 2,
+    "slug": "electronic",
+    "created_at": "2026-04-19T22:39:21.662Z",
+    "updated_at": "2026-04-26T14:58:58.993Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 2,
+  "fields": {
+    "name": "HeadPhones",
+    "description": "Lavender headphones",
+    "price": "25.00",
+    "stock": 5,
+    "image": "products/HEADPHONES.jpg",
+    "category": 2,
+    "slug": "headphone",
+    "created_at": "2026-04-19T22:40:51.982Z",
+    "updated_at": "2026-04-25T22:38:20.338Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 4,
+  "fields": {
+    "name": "Vitamin C",
+    "description": "Vitamin C Serum",
+    "price": "26.00",
+    "stock": 6,
+    "image": "products/VitaminC.png",
+    "category": 4,
+    "slug": "vitaminC",
+    "created_at": "2026-04-19T22:48:46.856Z",
+    "updated_at": "2026-04-25T22:37:57.358Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 5,
+  "fields": {
+    "name": "Satin Evening Dress",
+    "description": "A fluid silhouette with a polished luxury finish.",
+    "price": "89.99",
+    "stock": 16,
+    "image": "products/SatinEveningDress.png",
+    "category": 3,
+    "slug": "satin-evening-dress",
+    "created_at": "2026-04-24T22:44:37.897Z",
+    "updated_at": "2026-04-25T22:37:33.711Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 6,
+  "fields": {
+    "name": "Golden Veil Serum",
+    "description": "A luminous daily serum designed for a soft glow.",
+    "price": "24.99",
+    "stock": 32,
+    "image": "products/GoldenVeilSerum_FHwN5IY.png",
+    "category": 4,
+    "slug": "golden-veil-serum",
+    "created_at": "2026-04-24T22:44:37.909Z",
+    "updated_at": "2026-04-26T20:02:22.913Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 7,
+  "fields": {
+    "name": "Structured Mini Bag",
+    "description": "Compact profile with elevated hardware details.",
+    "price": "54.99",
+    "stock": 14,
+    "image": "products/BlackBag.jpg",
+    "category": 5,
+    "slug": "structured-mini-bag",
+    "created_at": "2026-04-24T22:44:37.919Z",
+    "updated_at": "2026-04-25T22:23:06.613Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 8,
+  "fields": {
+    "name": "Leather Court Heel",
+    "description": "A sleek neutral heel for formal and daily styling.",
+    "price": "64.99",
+    "stock": 11,
+    "image": "products/BlackHeels.png",
+    "category": 6,
+    "slug": "leather-court-heel",
+    "created_at": "2026-04-24T22:44:37.931Z",
+    "updated_at": "2026-04-25T22:17:46.504Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 9,
+  "fields": {
+    "name": "Marble Scent Candle",
+    "description": "A warm home accent with boutique-inspired fragrance.",
+    "price": "18.99",
+    "stock": 25,
+    "image": "products/ScentedCandle.png",
+    "category": 7,
+    "slug": "marble-scent-candle",
+    "created_at": "2026-04-24T22:44:37.942Z",
+    "updated_at": "2026-04-25T22:14:12.871Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 10,
+  "fields": {
+    "name": "Layered Chain Set",
+    "description": "Soft gold plating with modern everyday styling.",
+    "price": "19.99",
+    "stock": 40,
+    "image": "products/LayeredChain.png",
+    "category": 5,
+    "slug": "layered-chain-set",
+    "created_at": "2026-04-24T22:44:37.952Z",
+    "updated_at": "2026-04-26T19:38:48.501Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 11,
+  "fields": {
+    "name": "Gold Necklace",
+    "description": "Gold Arabic Engraved Palestine Necklace",
+    "price": "70.00",
+    "stock": 8,
+    "image": "products/PalestineNecklace.png",
+    "category": 5,
+    "slug": "gold-necklace",
+    "created_at": "2026-04-25T21:46:57.686Z",
+    "updated_at": "2026-04-26T19:39:17.154Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 12,
+  "fields": {
+    "name": "Gold Ring",
+    "description": "Gold Hometown Ring for Women",
+    "price": "30.00",
+    "stock": 16,
+    "image": "products/GoldRing.png",
+    "category": 5,
+    "slug": "gold-ring",
+    "created_at": "2026-04-25T21:53:52.727Z",
+    "updated_at": "2026-04-26T19:38:59.907Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 13,
+  "fields": {
+    "name": "Abaya",
+    "description": "Elegant Deep Plum Abaya Style",
+    "price": "150.00",
+    "stock": 10,
+    "image": "products/Abaya.png",
+    "category": 3,
+    "slug": "abaya",
+    "created_at": "2026-04-25T22:03:50.950Z",
+    "updated_at": "2026-04-25T22:23:17.114Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 14,
+  "fields": {
+    "name": "Miss Dior Perfume",
+    "description": "Elegant Miss Dior Perfume Bottle",
+    "price": "25.00",
+    "stock": 19,
+    "image": "products/MissDiorPerfume.png",
+    "category": 10,
+    "slug": "miss-dior-perfume",
+    "created_at": "2026-04-25T22:43:48.683Z",
+    "updated_at": "2026-04-29T18:54:04.639Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 15,
+  "fields": {
+    "name": "Beige Abaya",
+    "description": "Beige Abaya Modern and casual Beige Abaya, comes with hijab.",
+    "price": "120.00",
+    "stock": 13,
+    "image": "products/BeigeAbaya.png",
+    "category": 3,
+    "slug": "beige-abaya",
+    "created_at": "2026-04-26T15:29:55.059Z",
+    "updated_at": "2026-04-26T15:29:55.059Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 16,
+  "fields": {
+    "name": "Event Dress",
+    "description": "Elegant burgundy modest evening dress designed for hijabis, featuring a graceful flowing silhouette, long sleeves, and a refined high neckline for a sophisticated and timeless look. Crafted from soft, luxurious fabric with delicate details that add charm and elegance, making it perfect for weddings, formal events, engagement parties, and special occasions. The rich burgundy shade brings warmth, confidence, and effortless glamour while maintaining comfort and modesty.",
+    "price": "79.99",
+    "stock": 15,
+    "image": "products/BurgundyDress.png",
+    "category": 3,
+    "slug": "event-dress",
+    "created_at": "2026-04-26T16:39:37.366Z",
+    "updated_at": "2026-04-26T16:39:37.366Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 17,
+  "fields": {
+    "name": "Green Dress",
+    "description": "Elegant Dark Green modest evening dress designed for hijabis, featuring a graceful flowing silhouette, long sleeves, and a refined high neckline for a sophisticated and timeless look. Crafted from soft, luxurious fabric with delicate details that add charm and elegance, making it perfect for weddings, formal events, engagement parties, and special occasions. The rich burgundy shade brings warmth, confidence, and effortless glamour while maintaining comfort and modesty.",
+    "price": "79.99",
+    "stock": 6,
+    "image": "products/DarkGreenDress.png",
+    "category": 3,
+    "slug": "green-dress",
+    "created_at": "2026-04-26T16:42:50.980Z",
+    "updated_at": "2026-04-26T20:36:50.270Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 18,
+  "fields": {
+    "name": "Blue Dress",
+    "description": "Elegant dark blue modest evening dress designed for hijabis, featuring a graceful flowing silhouette, long sleeves, and a refined high neckline for a sophisticated and timeless look. Crafted from soft, luxurious fabric with delicate details that add charm and elegance, making it perfect for weddings, formal events, engagement parties, and special occasions. The rich burgundy shade brings warmth, confidence, and effortless glamour while maintaining comfort and modesty.",
+    "price": "59.00",
+    "stock": 6,
+    "image": "products/DarkBlueDress_q5SNx2W.png",
+    "category": 3,
+    "slug": "blue-dress",
+    "created_at": "2026-04-26T16:47:27.862Z",
+    "updated_at": "2026-04-26T19:31:14.580Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 19,
+  "fields": {
+    "name": "Burgundy Heels",
+    "description": "Elegant burgundy heels designed to add a touch of luxury and sophistication to any outfit. Featuring a sleek silhouette, comfortable fit, and timeless style, these heels are perfect for weddings, formal events, parties, and special occasions. The rich burgundy color adds warmth and elegance, making them easy to pair with dresses, evening wear, and chic statement looks for a graceful and confident finish.",
+    "price": "39.00",
+    "stock": 15,
+    "image": "products/BurgundyHeels.png",
+    "category": 6,
+    "slug": "burgundy-heels",
+    "created_at": "2026-04-26T17:04:41.470Z",
+    "updated_at": "2026-04-26T17:13:34.282Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 20,
+  "fields": {
+    "name": "Men Summer Set",
+    "description": "Casual set for men",
+    "price": "27.00",
+    "stock": 13,
+    "image": "products/MenSet.png",
+    "category": 9,
+    "slug": "men-summer-set",
+    "created_at": "2026-04-26T19:07:32.530Z",
+    "updated_at": "2026-04-26T19:07:32.530Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 21,
+  "fields": {
+    "name": "Modest Abaya",
+    "description": "Modesty abaya for summer",
+    "price": "100.00",
+    "stock": 19,
+    "image": "products/Beige-Abaya.png",
+    "category": 3,
+    "slug": "modest-abaya",
+    "created_at": "2026-04-26T19:10:24.490Z",
+    "updated_at": "2026-04-26T19:20:55.632Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 22,
+  "fields": {
+    "name": "Elegant ABAYA",
+    "description": "A refined abaya blending elegance, comfort, and modest luxury.",
+    "price": "99.00",
+    "stock": 10,
+    "image": "products/abaya2_7w5Xdbd.png",
+    "category": 3,
+    "slug": "brown-abaya",
+    "created_at": "2026-04-26T19:25:05.369Z",
+    "updated_at": "2026-04-26T20:12:38.716Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 23,
+  "fields": {
+    "name": "Classic Watch",
+    "description": "Classic Gold-Purple Small Square Women’s Watch",
+    "price": "25.00",
+    "stock": 5,
+    "image": "products/watch.png",
+    "category": 5,
+    "slug": "classic-watch",
+    "created_at": "2026-04-26T19:35:45.071Z",
+    "updated_at": "2026-04-26T19:35:45.071Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 24,
+  "fields": {
+    "name": "Fru Pillow",
+    "description": "Bubble Rabbit Velvet Pillow Winter Plush Pillow Cover Nordic Sofa Cushion Waist Pillow New",
+    "price": "9.00",
+    "stock": 13,
+    "image": "products/pillow.png",
+    "category": 7,
+    "slug": "fru-pillow",
+    "created_at": "2026-04-26T19:43:53.510Z",
+    "updated_at": "2026-04-26T20:36:50.266Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 25,
+  "fields": {
+    "name": "Vase",
+    "description": "New Plastic Spiral Vase Floral Art Stand, Nordic Style Creative Flower Holder, Glazed Melamine Flower Pot, Romantic Wedding Decor, Graduation/Birthday/Holiday Gift For Girlfriend/Boyfriend/Mom, Home Decor, Back To School Supplies ABS Home Decor,",
+    "price": "7.00",
+    "stock": 16,
+    "image": "products/vase.png",
+    "category": 7,
+    "slug": "vase",
+    "created_at": "2026-04-26T19:46:00.631Z",
+    "updated_at": "2026-04-29T18:54:04.671Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 26,
+  "fields": {
+    "name": "NEW HEELS",
+    "description": "Elegant Black Heels are now available at our site.",
+    "price": "39.00",
+    "stock": 7,
+    "image": "products/BlackHeel.png",
+    "category": 6,
+    "slug": "new-heels",
+    "created_at": "2026-04-26T19:49:07.880Z",
+    "updated_at": "2026-04-26T19:49:07.880Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 27,
+  "fields": {
+    "name": "Men’s Beige Co-Ord",
+    "description": "Men’s Beige Co-Ord Outfit | Minimal Summer Street Style for Men",
+    "price": "40.00",
+    "stock": 16,
+    "image": "products/MenOutfit_IdWCtOf.png",
+    "category": 9,
+    "slug": "mens-beige-co-ord",
+    "created_at": "2026-04-26T19:53:14.859Z",
+    "updated_at": "2026-04-26T19:58:12.852Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 28,
+  "fields": {
+    "name": "Effortless Style",
+    "description": "Looking for a polished yet relaxed outfit? This short sleeve suit-inspired shirt & pants set is the perfect blend of casual and classy. Ideal for outings, casual meetings, and vacations. Grab it now at a discounted price! 🎉",
+    "price": "45.00",
+    "stock": 11,
+    "image": "products/MenClothes_tiCINy7.png",
+    "category": 9,
+    "slug": "effortless-style",
+    "created_at": "2026-04-26T19:54:24.314Z",
+    "updated_at": "2026-04-26T19:58:00.394Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 29,
+  "fields": {
+    "name": "Eyeshadow Palette",
+    "description": "Brown is a natural, elegant and deep colour, whether it's for everyday light makeup, commuter makeup or party makeup, brown eyeshadow palettes can be easily adapted, and blends well with a variety of clothing styles and skin tones. 【Suitable for All Skin Tones】Unique brown tones, from neutral browns to taupe and gold, create an ultra-intense and long-lasting look. Suitable for all skin tones, whether you want a light base or a darker contour, this eyeshadow palette has it all! 【Better Lasting】The brown eyeshadow palette is made with a long-lasting, non-smudging formula that is less susceptible to sweat, oils and other factors, so the eyeshadows will maintain a better colour development even after a long period of activity.",
+    "price": "30.00",
+    "stock": 6,
+    "image": "products/Eyeshadow.png",
+    "category": 4,
+    "slug": "eyeshadow-palette",
+    "created_at": "2026-04-26T20:00:23.404Z",
+    "updated_at": "2026-04-26T20:00:23.404Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 30,
+  "fields": {
+    "name": "Red Lipstick",
+    "description": "Rouge à Lèvres Rouge : Le Must-Have de Toute Saison\r\nLe rouge à lèvres rouge traverse les saisons avec élégance. Découvrez comment cette teinte se porte en toutes occasions, du travail aux soirées.\"",
+    "price": "50.00",
+    "stock": 4,
+    "image": "products/Redlipstick.png",
+    "category": 4,
+    "slug": "red-lipstick",
+    "created_at": "2026-04-26T20:04:21.311Z",
+    "updated_at": "2026-04-29T18:54:04.656Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 31,
+  "fields": {
+    "name": "Brown elegant abaya",
+    "description": "An elegant abaya designed to blend timeless modesty with modern sophistication. Crafted with attention to detail, it offers a graceful silhouette, comfortable fit, and effortless elegance for everyday wear or special occasions. A refined piece that reflects both tradition and contemporary style.",
+    "price": "90.00",
+    "stock": 6,
+    "image": "products/BrownAbaya_uOILNRh.png",
+    "category": 3,
+    "slug": "elegant-abaya",
+    "created_at": "2026-04-26T20:10:12.891Z",
+    "updated_at": "2026-04-26T20:36:50.268Z"
+  }
+}
+]
